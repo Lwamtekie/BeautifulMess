@@ -26,8 +26,8 @@ namespace BeautifulMess.Controllers
         [HttpGet("{productreviewId}")]
         public ProductReview Get(int productreviewId)
         {
-            var repo = new ProductRepository();
-            var productreview = repo.GetProduct(productReviewId);
+            var repo = new ProductReviewRepository();
+            var productreview = repo.GetProductReview(productreviewId);
             return productreview;
         }
 

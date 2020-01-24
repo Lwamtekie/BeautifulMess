@@ -23,13 +23,13 @@ namespace BeautifulMess.Controllers
         }
 
 
-       // [HttpGet("{blogId}")]
-       // public Blog Get(int blogId)
-       // {
-        //    var repo = new BlogRepository();
-        //    var blog = repo.GetBlog(Blog);
-        //    return blog ;
-        //}
+        [HttpGet("{blogId}")]
+        public Blog Get(int blogId)
+       {
+            var repo = new BlogRepository();
+           var blog = repo.GetBlog(blogId);
+            return blog ;
+        }
 
         // POST: api/blog/
         [HttpPost]
@@ -47,11 +47,10 @@ namespace BeautifulMess.Controllers
             var repo = new BlogRepository();
             var updatedBlog = new Blog
             {
-                BlogHeader = updatedBlogCommand.BlogHeader,
-                Discusion = updatedBlogCommand.Discusion,
+                Title = updatedBlogCommand.Title,
+                Article = updatedBlogCommand.Article,
                 ImageUrl  = updatedBlogCommand.ImageUrl,
-
-            };
+             };
             repo.UpdateBlog(updatedBlog, id);
 
         }
@@ -64,8 +63,8 @@ namespace BeautifulMess.Controllers
             var deletedBlog = new Blog
 
             {
-                BlogHeader = updatedBlogCommand.BlogHeader,
-                Discusion = updatedBlogCommand.Discusion,
+                Title = updatedBlogCommand.Title,
+                Article = updatedBlogCommand.Article,
                 ImageUrl = updatedBlogCommand.ImageUrl,
             };
             repo.DeleteBlog(deletedBlog, id);

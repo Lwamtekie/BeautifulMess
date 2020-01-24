@@ -11,7 +11,7 @@ namespace BeautifulMess.DataAccess
 {
     public class ProductReviewRepository
     {
-        string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
+        readonly string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
 
         public List<ProductReview> GetAll()
         {
@@ -19,7 +19,7 @@ namespace BeautifulMess.DataAccess
             {
                 connection.Open();
 
-                var productsreview = connection.Query<ProductReview>("Select * from ProductReview);
+                var productsreview = connection.Query<ProductReview>("Select * from ProductReview");
 
                 return productsreview.AsList();
             }
@@ -51,12 +51,15 @@ namespace BeautifulMess.DataAccess
                 var sql = @"INSERT INTO [dbo].[ProductReview]
 	                                ([Comment]
 	                                ,[Rating]
+                                    ,[ProductId]
+                                    ,[UserId])
                                     
                                  output inserted.*
                                  VALUES
 	                                (@Comment
                                     ,@Rating
-                                    )";
+                                    ,@ProductId
+                                    ,@UserId)";
 
 
                 return connection.QueryFirst<ProductReview>(sql, newProductReview);
@@ -70,7 +73,7 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[ProductReview]
-	                   WHERE [Id] = @ProductReviewIdToDelete";
+	                   WHERE [Id] = @Id";
 
                 productreviewToDelete.Id = id;
 
@@ -86,10 +89,9 @@ namespace BeautifulMess.DataAccess
                 connection.Open();
 
                 var sql = @"UPDATE [dbo].[ProductReview]
-	                            SET [Comment] = @Comment,
-                                    [Rating] = @Rating,
-                                   
-	                        WHERE [Id] = @id";
+	                            SET [Comment] = @comment,
+                                    [Rating] = @rating
+                                WHERE [Id] = @id";
 
                 ProductReviewToUpdate.Id = id;
 

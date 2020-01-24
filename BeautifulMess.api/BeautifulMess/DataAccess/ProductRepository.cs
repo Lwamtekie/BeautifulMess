@@ -11,22 +11,22 @@ namespace BeautifulMess.DataAccess
 {
     public class ProductRepository
     {
-        string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
+        readonly string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
 
-        public List<ProductReview> GetAll()
+        public List<Product> GetAll()
         {
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
 
-                var products = connection.Query<ProductReview>("Select * from Product");
+                var products = connection.Query<Product>("Select * from Product");
 
                 return products.AsList();
             }
 
         }
 
-        public ProductReview GetProduct(int productId)
+        public Product GetProduct(int productId)
         {
             using (var db = new SqlConnection(_connectionString))
             {
@@ -37,12 +37,12 @@ namespace BeautifulMess.DataAccess
                 {
                     ProductId = productId
                 };
-                var product = db.QueryFirst<ProductReview>(sql, parameters);
+                var product = db.QueryFirst<Product>(sql, parameters);
                 return product;
             }
         }
 
-        public ProductReview AddProduct(AddProductCommand newProduct)
+        public Product AddProduct(AddProductCommand newProduct)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -50,23 +50,23 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"INSERT INTO [dbo].[Product]
 	                                ([Name]
-	                                ,[ Price]
+	                                ,[Price]
                                     ,[Store]
                                     ,[ImageUrl]
-                                    ,[TypeId] )
+                                    ,[CategoryId] )
                                  output inserted.*
                                  VALUES
 	                                (@Name
                                     ,@Price
                                     ,@Store
                                     ,@ImageUrl
-                                    ,@TypeId)";
+                                    ,@CategoryId)";
 
 
-                return connection.QueryFirst<ProductReview>(sql, newProduct);
+                return connection.QueryFirst<Product>(sql, newProduct);
             }
         }
-        public bool DeleteProduct(ProductReview productToDelete, int id)
+        public bool DeleteProduct(Product productToDelete, int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -74,7 +74,7 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[Product]
-	                   WHERE [Id] = @ProductIdToDelete";
+	                   WHERE [Id] = @Id";
 
                 productToDelete.Id = id;
 
@@ -83,7 +83,7 @@ namespace BeautifulMess.DataAccess
 
         }
 
-        public bool UpdateProduct(ProductReview ProductToUpdate, int id )
+        public bool UpdateProduct(Product ProductToUpdate, int id )
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -94,7 +94,7 @@ namespace BeautifulMess.DataAccess
                                     [Price] = @price,
                                     [Store] = @store,
                                     [ImageUrl] = @imageurl,
-                                    [TypeId] = @typeid 
+                                    [CategoryId] = @categoryid 
 	                        WHERE [Id] = @id";
 
                 ProductToUpdate.Id = id;

@@ -10,62 +10,62 @@ using System.Threading.Tasks;
 
 namespace BeautifulMess.DataAccess
 {
-    public class TypeRepository
+    public class CategoryRepository
 
     { 
-       string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
+       readonly string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
 
-    public List<Type> GetAll()
+    public List<Category> GetAll()
     {
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
 
-                var type = connection.Query<Type>("Select * from Type");
+                var Category = connection.Query<Category>("Select * from Category");
 
-                return type.AsList();
+                return Category.AsList();
             }
 
         }
 
-        public Type GetType(int TypeId)
+        public Category GetCategory(int CategoryId)
     {
         using (var db = new SqlConnection(_connectionString))
         {
             var sql = @"select *
-                            from [Type]
-                            where Id = @TypeId";
+                            from [Category]
+                            where Id = @CategoryId";
             var parameters = new
             {
-                TypeId = TypeId
+                CategoryId = CategoryId
             };
-            var Type = db.QueryFirst<Type>(sql, parameters);
-            return Type;
+            var Category = db.QueryFirst<Category>(sql, parameters);
+            return Category;
         }
     }
 
-    public bool AddType(AddTypeCommand newType)
+    public bool AddCategory(AddCategoryCommand newCategory)
     {
         using (var db = new SqlConnection(_connectionString))
         {
-            var sql = @"INSERT INTO [dbo].[Type]
+            var sql = @"INSERT INTO [dbo].[Category]
                                        ([Name])
                                  VALUES
                                        (@name)";
 
-            return db.Execute(sql, newType) == 1;
+            return db.Execute(sql, newCategory) == 1;
         }
     }
 
-    public bool UpdateType(Type TypeToUpdate, int id)
+    public bool UpdateCategory(Category CategoryToUpdate, int id)
     {
         using (var db = new SqlConnection(_connectionString))
         {
-            var sql = @"UPDATE [dbo].[Type]
+            var sql = @"UPDATE [dbo].[Category]
                                SET [Name] = @name
                              WHERE Id = @id";
-            TypeToUpdate.Id = id;
-            return db.Execute(sql, TypeToUpdate) == 1;
+                CategoryToUpdate.Id = id;
+            return db.Execute(sql, CategoryToUpdate) == 1;
         }
     }
 

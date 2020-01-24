@@ -7,8 +7,8 @@ namespace BeautifulMess.Commands
 {
     public class UpdateBlogCommand
     {
-        public string BlogHeader { get; set; }
-        public string Discusion { get; set; }
+        public string Title { get; set; }
+        public string Article { get; set; }
         public string ImageUrl { get; set; }
     }
 }
