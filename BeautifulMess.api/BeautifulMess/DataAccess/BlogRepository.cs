@@ -48,14 +48,16 @@ namespace BeautifulMess.DataAccess
                 connection.Open();
 
                 var sql = @"INSERT INTO [dbo].[Blog]
-	                                ([BlogHeader]
-	                                ,[Discusion ]
-                                    ,[ImageUrl])
+	                                ([Title]
+	                                ,[Article ]
+                                    ,[ImageUrl]
+                                    ,[UserId])
                                  output inserted.*
                                  VALUES
-	                                (@BlogHeader
-                                    ,@Discusion
-                                     ,@ImageUrl)";
+	                                (@Title
+                                    ,@Article 
+                                     ,@ImageUrl
+                                     ,@UserId)";
 
 
                 return connection.QueryFirst<Blog>(sql, newBlog);
@@ -69,7 +71,7 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[Blog]
-	                   WHERE [Id] = @BlogIdToDelete";
+	                   WHERE [Id] = @Id";
 
                 blogToDelete.Id = id;
 
@@ -84,9 +86,9 @@ namespace BeautifulMess.DataAccess
                 connection.Open();
 
                 var sql = @"UPDATE [dbo].[Blog]
-	                            SET [BlogHeader] = @BlogHeader,
-                                    [Discusion ] = @Discusion,
-                                    [ImageUrl] = @ImageUrl,
+	                            SET [Title] = @Title,
+                                    [Article] = @article,
+                                    [ImageUrl] = @ImageUrl
 	                        WHERE [Id] = @id";
 
                 BlogToUpdate.Id = id;

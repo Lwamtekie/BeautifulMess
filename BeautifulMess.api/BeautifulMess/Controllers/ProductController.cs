@@ -16,7 +16,7 @@ namespace BeautifulMess.Controllers
     {
        
         [HttpGet]
-        public IEnumerable<Product> GetProducts()
+        public List<Product> GetProducts()
         {
             var repo = new ProductRepository();
             return repo.GetAll();
@@ -51,7 +51,7 @@ namespace BeautifulMess.Controllers
                 Price = updatedProductCommand.Price,
                 Store = updatedProductCommand.Store,
                 ImageUrl = updatedProductCommand.ImageUrl,
-                TypeId = updatedProductCommand.TypeId
+                CategoryId = updatedProductCommand.CategoryId
             };
             repo.UpdateProduct(updatedProduct, id);
 
@@ -68,7 +68,7 @@ namespace BeautifulMess.Controllers
                 Price = updatedProductCommand.Price,
                 Store = updatedProductCommand.Store,
                 ImageUrl = updatedProductCommand.ImageUrl,
-                TypeId = updatedProductCommand.TypeId
+                CategoryId = updatedProductCommand.CategoryId
             };
             repo.DeleteProduct(deletedProduct, id);
         }

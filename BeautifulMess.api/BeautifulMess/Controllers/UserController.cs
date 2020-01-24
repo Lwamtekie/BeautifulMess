@@ -22,13 +22,13 @@ namespace BeautifulMess.Controllers
         }
 
 
-       // [HttpGet("{userId}")]
-       // public User Get(int userId)
-      //  {
-      //      var repo = new UserRepository();
-      //      var user = repo.GetUser(User);
-       //     return user;
-       // }
+       [HttpGet("{userId}")]
+       public User Get(int userId)
+       {
+            var repo = new UserRepository();
+            var user = repo.GetUser(userId);
+            return user;
+        }
 
         // POST: api/users/
         [HttpPost]

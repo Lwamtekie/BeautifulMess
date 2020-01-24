@@ -7,8 +7,9 @@ namespace BeautifulMess.Commands
 {
     public class AddBlogCommand
     {
-        public string BlogHeader { get; set; }
-        public string Discusion { get; set; }
+        public string Title { get; set; }
+        public string Article { get; set; }
         public string ImageUrl { get; set; }
+        public int User { get; set; }
     }
 }

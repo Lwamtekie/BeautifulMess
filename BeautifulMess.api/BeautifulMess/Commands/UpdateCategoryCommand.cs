@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 
 namespace BeautifulMess.Commands
 {
-    public class AddTypeCommand
-    {
+    public class UpdateCategoryCommand
+    {   
         public string Name { get; set; }
     }
 }

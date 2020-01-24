@@ -11,7 +11,7 @@ namespace BeautifulMess.DataAccess
 {
     public class UserRepository
     {
-        string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
+        readonly string _connectionString = "Server=localhost;Database=BeautifulMess;Trusted_Connection=True;";
 
         public List<User> GetAll()
         {
@@ -19,7 +19,8 @@ namespace BeautifulMess.DataAccess
             {
                 connection.Open();
 
-                var user = connection.Query<User>("Select * from User");
+                
+                var user = connection.Query<User>("Select * from [User]");
 
                 return user.AsList();
             }
@@ -31,7 +32,7 @@ namespace BeautifulMess.DataAccess
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"select *
-                            from User
+                            from [User]
                             where Id =@UserId";
                 var parameters = new
                 {
@@ -67,7 +68,7 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[User]
-	                   WHERE [Id] = @UserIdToDelete";
+	                   WHERE [Id] = @id";
 
                 userToDelete.Id = id;
 
@@ -83,7 +84,7 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"UPDATE [dbo].[User]
 	                            SET [Name] = @name,
-                                    [Email] = @email,
+                                    [Email] = @email
 	                        WHERE [Id] = @id";
 
                  UserToUpdate.Id = id;
