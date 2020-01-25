@@ -79,7 +79,7 @@ namespace BeautifulMess.DataAccess
             }
 
         }
-        public bool UpdateBlog(Blog BlogToUpdate, int id)
+        public bool UpdateBlog(UpdateBlogCommand updatedBlog)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -87,13 +87,12 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"UPDATE [dbo].[Blog]
 	                            SET [Title] = @Title,
-                                    [Article] = @article,
+                                    [Article] = @Article,
                                     [ImageUrl] = @ImageUrl
-	                        WHERE [Id] = @id";
+	                        WHERE [Id] = @BlogId";
 
-                BlogToUpdate.Id = id;
 
-                return connection.Execute(sql, BlogToUpdate) == 1;
+                return connection.Execute(sql, updatedBlog) == 1;
             }
         }
     }

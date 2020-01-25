@@ -22,12 +22,12 @@ const MyNavbar = (props) => {
       <NavbarBrand href="/">Beautiful Mess</NavbarBrand>
       <NavbarToggler onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
-        <Nav className="mr-auto" navbar>
+        <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink href="/account/">Products</NavLink>
+            <NavLink href="/Products/">Products</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/cart/">User</NavLink>
+            <NavLink href="/User/">User</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/">Logout</NavLink>

@@ -39,19 +39,19 @@ namespace BeautifulMess.Controllers
             repo.AddBlog(newBlog);
         }
 
-        // PUT: api/blog/5
-        [HttpPut("{id}")]
-        public void Update(UpdateBlogCommand updatedBlogCommand, int id)
+        // PUT: api/blog/
+        [HttpPut]
+        public void Update(UpdateBlogCommand updatedBlogCommand)
 
         {
             var repo = new BlogRepository();
-            var updatedBlog = new Blog
-            {
-                Title = updatedBlogCommand.Title,
-                Article = updatedBlogCommand.Article,
-                ImageUrl  = updatedBlogCommand.ImageUrl,
-             };
-            repo.UpdateBlog(updatedBlog, id);
+            //var updatedBlog = new Blog
+            //{
+            //    Title = updatedBlogCommand.Title,
+            //    Article = updatedBlogCommand.Article,
+            //    ImageUrl  = updatedBlogCommand.ImageUrl,
+            // };
+            repo.UpdateBlog(updatedBlogCommand);
 
         }
 
