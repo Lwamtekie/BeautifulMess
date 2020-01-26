@@ -10,6 +10,6 @@ namespace BeautifulMess.Commands
         public string Title { get; set; }
         public string Article { get; set; }
         public string ImageUrl { get; set; }
-        public int User { get; set; }
+        public int UserId { get; set; }
     }
 }
