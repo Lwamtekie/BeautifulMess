@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BeautifulMess.Controllers
 {
-    [Route("api/blog")]
+    [Route("api/blogs")]
     [ApiController]
     public class BlogController : ControllerBase
 
