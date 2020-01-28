@@ -5,5 +5,5 @@ const addUser = user => axios.post(`${baseUrl}`, user);
 
 
 export default {
-    addUser,
-}
+  addUser,
+};

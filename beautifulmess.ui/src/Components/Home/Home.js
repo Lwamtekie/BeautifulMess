@@ -1,6 +1,5 @@
 import React from 'react';
 import getBlogs from '../../Helpers/Data/BlogData';
-import Register from '../Register/Register';
 import BlogCard from '../BlogCard/BlogCard';
 import './Home.scss';
 
@@ -24,7 +23,6 @@ class Home extends React.Component {
       <div className="Product-main">
       {printBlogs}
       <div className="Home">
-        <Register/>
       </div>
     </div>
     );
