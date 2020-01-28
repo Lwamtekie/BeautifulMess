@@ -19,7 +19,7 @@ registerCLickEvent = (e) => {
   Request
     .registerUser(user)
     .then(() => {
-      this.props.history.push('home');
+      this.props.history.push('LogOut');
     })
     .catch((error) => {
 
@@ -42,7 +42,7 @@ registerClickEvent = (e) => {
   e.preventDefault();
   const saveMe = { ...this.state.user };
   AddUser.addUser(saveMe)
-    .then(() => this.props.history.push('/home'))
+    .then(() => this.props.history.push('/LogOut'))
     .catch(err => (err));
 }
 

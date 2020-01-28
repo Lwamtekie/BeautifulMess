@@ -30,7 +30,7 @@ const MyNavbar = (props) => {
             <NavLink href="/User/">User</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/">Logout</NavLink>
+            <NavLink href="/LogOut/">Logout</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
