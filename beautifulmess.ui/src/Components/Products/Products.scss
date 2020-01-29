@@ -1,12 +1,23 @@
 .product{
-    background-image: url("https://providencerestaurantws.com/wp-content/uploads/2015/11/woodbackground.jpg");
-    background-position: center center ; 
-    background-size: cover;
-    background-attachment: fixed;
+    align-content: center;
 }
 
-ul {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    list-style-type: none;
+
+.Product-main{
+    display: flex;  
+    flex-wrap: wrap;
 }
+
+.row {
+    display: inline;
+    }
+
+    .card-body {
+        background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-fashion-fall-foliage-new-products-background-image_163281.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-attachment: fixed;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 1.25rem;
+    }
