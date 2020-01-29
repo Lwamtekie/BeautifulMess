@@ -42,6 +42,25 @@ namespace BeautifulMess.DataAccess
                 return user;
             }
         }
+
+        public User GetUserByemail(string email)
+        {
+            using (var db = new SqlConnection(_connectionString))
+            {
+                var sql = @"select *
+                            from [User]
+                            where email =@email";
+                var parameters = new
+                {
+                    email = email
+                };
+                var user = db.QueryFirstOrDefault<User>(sql, parameters);
+                return user;
+            }
+        }
+
+
+
         public User AddUser(AddUserCommand newUser)
         {
             using (var connection = new SqlConnection(_connectionString))

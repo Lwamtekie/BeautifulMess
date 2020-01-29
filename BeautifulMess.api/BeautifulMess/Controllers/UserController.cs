@@ -30,6 +30,23 @@ namespace BeautifulMess.Controllers
             return user;
         }
 
+
+        [HttpGet("email/{email}")]
+        public IActionResult GetUserByemail(string email)
+        {
+            var repo = new UserRepository();
+            var user = repo.GetUserByemail(email);
+
+            if (user == null) 
+            {
+                return Unauthorized();
+            }
+
+            return Ok(user);
+        }
+
+
+
         // POST: api/users/
         [HttpPost]
         public void Create(AddUserCommand newUser)
