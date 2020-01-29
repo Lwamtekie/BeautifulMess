@@ -16,7 +16,7 @@ class ProductCard extends React.Component {
           <div className="card">
             <div className="card-body">
             <p className="card-title">{product.name}</p>
-            <p className="card-title">{product.Price}</p>
+            <p className="card-title">{product.price}</p>
             <p className="card-title">{product.store}</p>
             <img src={product.imageUrl} className="card-img" alt="..." />
 

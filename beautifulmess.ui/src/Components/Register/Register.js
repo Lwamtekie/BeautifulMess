@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-import AddUser from '../../Helpers/Data/UserData'
+import { Link } from 'react-router-dom';
+import AddUser from '../../Helpers/Data/UserData';
 import './Register.scss';
 
 
@@ -19,7 +19,7 @@ registerCLickEvent = (e) => {
   Request
     .registerUser(user)
     .then(() => {
-      this.props.history.push('LogOut');
+      this.props.history.push('/Login');
     })
     .catch((error) => {
 
@@ -87,7 +87,7 @@ render() {
         </div>
         <div className="form-group">
           <div className="col-sm-12 text-center">
-            <Link to="/login">Need to Login?</Link>
+            <Link to="/Login">Need to Login?</Link>
           </div>
         </div>
         <div className="form-group">
