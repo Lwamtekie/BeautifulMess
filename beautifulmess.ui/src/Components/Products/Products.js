@@ -8,17 +8,39 @@ import './Products.scss';
 class Product extends React.Component {
   state = {
     Products: [],
+    filteredProducts: [],
+  }
+
+  filterProducts = (e) => {
+    const Category = e.target.id;
+    const intCategory = parseInt(Category, 10);
+    const { Products } = this.state;
+    console.error(intCategory);
+    if (intCategory === 0) {
+      this.getAllProducts();
+    } else {
+      const filteredData = Products.filter(a => a.categoryId === intCategory);
+      console.error(filteredData);
+      this.setState({
+        filteredProducts: filteredData,
+      });
+    }
+  }
+
+  getAllProducts = () => {
+    ProductData.getProducts()
+      .then(res => this.setState({ Products: res, filteredProducts: res }));
   }
 
   componentDidMount() {
-    ProductData.getProducts()
-      .then(res => this.setState({ Products: res }));
+    this.getAllProducts();
+    // ProductData.getProducts()
+    //   .then(res => this.setState({ Products: res }));
   }
 
-
   render() {
-    const { Products } = this.state;
-    const printProducts = Products.map(product => <ProductCard key={product.id}
+    const { filteredProducts } = this.state;
+    const printProducts = filteredProducts.map(product => <ProductCard key={product.id}
         product={product}
       />);
     return (
