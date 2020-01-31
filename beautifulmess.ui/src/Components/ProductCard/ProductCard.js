@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 import './ProductCard.scss';
 
@@ -11,14 +11,15 @@ class ProductCard extends React.Component {
 
  render() {
    const { product } = this.props;
+   const singleLink = `/single/${product.id}`;
+
    return (
         <div className="ProductCard col-4">
           <div className="card">
             <div className="card-body">
             <p className="card-title">{product.name}</p>
-            <p className="card-title">{product.price}</p>
-            <p className="card-title">{product.store}</p>
             <img src={product.imageUrl} className="card-img" alt="..." />
+            <Link className="btn btn-info" to={singleLink}>View</Link>
 
             </div>
           </div>
