@@ -30,3 +30,12 @@
         font-size: smaller;
         margin-bottom: .75rem;
     }
+    .btn-group{
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    padding: 2rem;
+}
+.card-img, .card-img-bottom {
+  max-width: fit-content;
+}
