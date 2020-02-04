@@ -63,7 +63,7 @@ namespace BeautifulMess.DataAccess
                 return connection.QueryFirst<Blog>(sql, newBlog);
             }
         }
-        public bool DeleteBlog(Blog blogToDelete, int id)
+        public bool DeleteBlog(int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -73,9 +73,8 @@ namespace BeautifulMess.DataAccess
                             from [dbo].[Blog]
 	                   WHERE [Id] = @Id";
 
-                blogToDelete.Id = id;
-
-                return connection.Execute(sql, blogToDelete) == 1;
+                
+                return connection.Execute(sql, new { Id = id }) == 1;
             }
 
         }

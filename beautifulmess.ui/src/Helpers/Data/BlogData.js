@@ -8,4 +8,9 @@ const getBlogs = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default getBlogs;
+const deleteBlog = blogId => axios.delete(`${baseUrl}/${blogId}`);
+
+export default {
+  getBlogs,
+  deleteBlog,
+};

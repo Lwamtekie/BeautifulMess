@@ -5,13 +5,10 @@ using System.Threading.Tasks;
 
 namespace BeautifulMess.Models
 {
-    public class Blog
+    public class UserBlog
     {
         public int Id { get; set; }
-        public string Title { get; set; }
-        public string Article { get; set; }
-        public string ImageUrl { get; set; }
         public int UserId { get; set; }
-        
+        public int BlogId { get; set; }
     }
 }
