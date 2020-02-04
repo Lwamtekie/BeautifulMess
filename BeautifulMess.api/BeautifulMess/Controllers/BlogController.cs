@@ -57,17 +57,10 @@ namespace BeautifulMess.Controllers
 
         // DELETE: api/blog/5
         [HttpDelete("{id}")]
-        public void Delete(UpdateBlogCommand updatedBlogCommand, int id)
+        public void Delete(int id)
         {
             var repo = new BlogRepository();
-            var deletedBlog = new Blog
-
-            {
-                Title = updatedBlogCommand.Title,
-                Article = updatedBlogCommand.Article,
-                ImageUrl = updatedBlogCommand.ImageUrl,
-            };
-            repo.DeleteBlog(deletedBlog, id);
+            repo.DeleteBlog(id);
         }
     }
 }

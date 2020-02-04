@@ -59,7 +59,7 @@ namespace BeautifulMess.Controllers
         public void Delete(UserBlog userblogToDelete, int id)
         {
             var repo = new UserBlogRepository();
-            repo.DeleteUserBlog(userblogToDelete, id);
+            //repo.DeleteUser(userblogToDelete, id);
 
         }
     }

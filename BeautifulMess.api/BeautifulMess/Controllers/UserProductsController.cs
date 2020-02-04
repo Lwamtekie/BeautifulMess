@@ -15,18 +15,18 @@ namespace BeautifulMess.Controllers
     public class UserProductsController : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<UserProducts> GetUserProducts()
+        public IEnumerable<UserProducts> GetAllProducts()
         {
             var repo = new UserProductsRepository();
             return repo.GetAll();
         }
 
 
-        [HttpGet("{UserProductsId}")]
-        public UserProducts Get(int userproductsId)
+        [HttpGet("{userId}")]
+        public IEnumerable<Product> GetUserProducts(int userId)
         {
             var repo = new UserProductsRepository();
-            var userproducts = repo.GetUserProducts(userproductsId);
+            var userproducts = repo.GetUserProducts(userId);
             return userproducts;
         }
 
@@ -40,11 +40,11 @@ namespace BeautifulMess.Controllers
         }
 
         // DELETE: api/userproducts/5
-        [HttpDelete("{id}")]
-        public void Delete(UserProducts userproductsToDelete, int id)
+        [HttpDelete("{userProductId}")]
+        public void Delete(int userProductId)
         {
             var repo = new UserProductsRepository();
-            repo.DeleteUserProducts(userproductsToDelete, id);
+            repo.DeleteUserProducts(userProductId);
 
         }
     }

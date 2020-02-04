@@ -28,18 +28,19 @@ namespace BeautifulMess.DataAccess
 
         }
 
-        public UserProducts GetUserProducts(int UserProductsId)
+        public IEnumerable<Product> GetUserProducts(int userId)
         {
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"select *
-                            from [UserProducts]
-                            where Id =@UserProductsId";
+                            from Product
+                            join UserProducts on Product.Id = UserProducts.ProductId
+                            where UserProducts.UserId = @userId";
                 var parameters = new
                 {
-                    UserProductsId = UserProductsId
+                    userId = userId
                 };
-                var userproducts = db.QueryFirst<UserProducts>(sql, parameters);
+                var userproducts = db.Query<Product>(sql, parameters);
                 return userproducts;
             }
         }
@@ -64,7 +65,7 @@ namespace BeautifulMess.DataAccess
                 return connection.QueryFirst<UserProducts>(sql, newUserProducts);
             }
         }
-        public bool DeleteUserProducts(UserProducts userproductsToDelete, int id)
+        public bool DeleteUserProducts(int userProductId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -72,11 +73,14 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[UserProducts]
-	                   WHERE [Id] = @id";
+	                   WHERE [Id] = @userProductId";
 
-                userproductsToDelete.Id = id;
+                var parameters = new
+                {
+                    userProductId = userProductId
+                };
 
-                return connection.Execute(sql, userproductsToDelete) == 1;
+                return connection.Execute(sql, parameters) == 1;
             }
 
         }
