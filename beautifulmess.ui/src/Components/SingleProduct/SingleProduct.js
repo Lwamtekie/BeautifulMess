@@ -14,10 +14,9 @@ class SingleProduct extends React.Component {
 
  addMyProducts = () => {
    const userSessionInfo = UserData.getSessionUser();
-   console.error('test', userSessionInfo);
    const currentProductid = this.state.product.id;
    const myProduct = {
-     userid: userSessionInfo,
+     userid: userSessionInfo.id,
      productid: currentProductid,
    };
 

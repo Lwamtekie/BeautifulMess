@@ -7,10 +7,9 @@ class BlogCard extends React.Component {
    blog: {},
  };
 
- delete = (e) => {
-   e.preventdefault();
-   const { blog, deleteBlog } = this.props;
-   deleteBlog(blog.id);
+ delete = () => {
+   const { blogs, deleteBlog } = this.props;
+   deleteBlog(blogs.id);
  }
 
  render() {

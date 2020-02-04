@@ -31,7 +31,7 @@ deleteBlog = (blogId) => {
 
 render() {
   const { Blogs } = this.state;
-  const printBlogs = Blogs.map(blogs => <BlogCard
+  const printBlogs = Blogs.map(blogs => <BlogCard key={blogs.id}
         blogs={blogs}
         deleteBlog={this.deleteBlog}
       />);

@@ -8,7 +8,7 @@ const getBlogs = () => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const deleteBlog = blogId => axios.delete(`${baseUrl}`, blogId);
+const deleteBlog = blogId => axios.delete(`${baseUrl}/${blogId}`);
 
 export default {
   getBlogs,

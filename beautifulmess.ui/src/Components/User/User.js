@@ -1,27 +1,38 @@
 import React from 'react';
-import UserProduct from '../../Helpers/Data/UserProductData';
-import MyProducts from '../MyProducts/MyProducts';
+import userProductData from '../../Helpers/Data/UserProductData';
+import UserData from '../../Helpers/Data/UserData';
+import MyProduct from '../MyProducts/MyProducts';
 import './User.scss';
 
 
 class User extends React.Component {
   state = {
-    MyProducts: [],
+    myProducts: [],
   }
 
   getMyProducts = () => {
-    UserProduct.getMyProducts()
-      .then(res => this.setState({ MyProducts: res }));
+    const userSessionInfo = UserData.getSessionUser();
+    userProductData.getUserProducts(userSessionInfo.id)
+      .then(myProducts => this.setState({ myProducts }))
+      .catch(error => console.error(error));
   }
 
   componentDidMount() {
     this.getMyProducts();
   }
 
+  deleteUserProduct = (userProductId) => {
+    userProductData.deleteUserProduct(userProductId)
+      .then(() => this.getMyProducts())
+      .catch(err => (err));
+  }
+
+
   render() {
-    const printMyProducts = this.setState.MyProducts.map(product => <MyProducts key={product.id}
+    const printMyProducts = this.state.myProducts.map(product => <MyProduct key={product.id}
           product={product}
           getMyProducts={this.getMyProducts}
+          deleteUserProduct={this.deleteUserProduct}
     />);
     return (
           <div className="UserPage">
