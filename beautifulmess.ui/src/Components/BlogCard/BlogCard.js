@@ -1,4 +1,5 @@
 import React from 'react';
+import AddBlog from '../AddBlog/AddBlog';
 import './BlogCard.scss';
 
 class BlogCard extends React.Component {
@@ -12,9 +13,14 @@ class BlogCard extends React.Component {
    deleteBlog(blogs.id);
  }
 
- render() {
-   const { blogs } = this.props;
-   return (
+AddBlog = () => {
+
+}
+
+
+render() {
+  const { blogs } = this.props;
+  return (
         <div className="Blog">
         <div className="container">
         <h2 className="Name-title">{blogs.title}</h2>
@@ -22,11 +28,14 @@ class BlogCard extends React.Component {
         <p className="Name-title">{blogs.article}</p>
   <div className="delete">
     <button className="btn btn-danger" onClick={this.delete}>Delete</button>
+    {/* <button className="btn btn-danger" onClick={this.AddBlog}>Add</button> */}
+    <AddBlog />
+
   </div>
   </div>
   </div>
-   );
- }
+  );
+}
 }
 
 export default BlogCard;
