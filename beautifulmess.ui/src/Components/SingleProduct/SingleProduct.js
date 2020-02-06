@@ -20,6 +20,7 @@ class SingleProduct extends React.Component {
      productid: currentProductid,
    };
 
+
    UserProductData.addMyProducts(myProduct)
      .then(() => this.props.history.push('/User'))
      .catch(err => (err));

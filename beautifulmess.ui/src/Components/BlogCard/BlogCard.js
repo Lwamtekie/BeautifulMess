@@ -13,14 +13,9 @@ class BlogCard extends React.Component {
    deleteBlog(blogs.id);
  }
 
-AddBlog = () => {
-
-}
-
-
-render() {
-  const { blogs } = this.props;
-  return (
+ render() {
+   const { blogs } = this.props;
+   return (
         <div className="Blog">
         <div className="container">
         <h2 className="Name-title">{blogs.title}</h2>
@@ -29,13 +24,13 @@ render() {
   <div className="delete">
     <button className="btn btn-danger" onClick={this.delete}>Delete</button>
     {/* <button className="btn btn-danger" onClick={this.AddBlog}>Add</button> */}
-    <AddBlog />
+    <AddBlog getBlogs={this.props.getBlogs}/>
 
   </div>
   </div>
   </div>
-  );
-}
+   );
+ }
 }
 
 export default BlogCard;

@@ -39,7 +39,6 @@ class User extends React.Component {
               <h2>FavoriteProducts</h2>
                   {printMyProducts}
               <div className="user">
-                {printMyProducts}
               </div>
           </div>
     );
