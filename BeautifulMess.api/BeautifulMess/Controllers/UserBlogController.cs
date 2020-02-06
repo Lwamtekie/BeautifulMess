@@ -22,11 +22,11 @@ namespace BeautifulMess.Controllers
         }
 
 
-        [HttpGet("{userblogId}")]
-        public UserBlog Get(int userblogId)
+        [HttpGet("{userId}")]
+        public IEnumerable<Blog> GetUserBlog(int userId)
         {
             var repo = new UserBlogRepository();
-            var userblog = repo.GetUserBlog(userblogId);
+            var userblog = repo.GetUserBlog(userId);
             return userblog;
         }
 
@@ -38,28 +38,14 @@ namespace BeautifulMess.Controllers
             repo.AddUserBlog(newUserBlog);
         }
 
-        // PUT: api/userblog/
-        [HttpPut]
-        //  public void Update(UpdateBlogCommand updatedBlogCommand)
 
-        //{
-        //var repo = new BlogRepository();
-        //var updatedBlog = new Blog
-        //{
-        //    Title = updatedBlogCommand.Title,
-        //    Article = updatedBlogCommand.Article,
-        //    ImageUrl  = updatedBlogCommand.ImageUrl,
-        // };
-        // repo.UpdateBlog(updatedBlogCommand);
-
-        // }
 
         // DELETE: api/userblog/5
-        [HttpDelete("{id}")]
-        public void Delete(UserBlog userblogToDelete, int id)
+        [HttpDelete("{userBlogId}")]
+        public void Delete( int userBlogId)
         {
             var repo = new UserBlogRepository();
-            //repo.DeleteUser(userblogToDelete, id);
+            repo.DeleteUserBlog(userBlogId);
 
         }
     }
