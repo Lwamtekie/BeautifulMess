@@ -52,14 +52,14 @@ namespace BeautifulMess.DataAccess
 	                                ([Comment]
 	                                ,[Rating]
                                     ,[ProductId]
-                                    ,[UserId])
+                                    ,[UserName])
                                     
                                  output inserted.*
                                  VALUES
 	                                (@Comment
                                     ,@Rating
                                     ,@ProductId
-                                    ,@UserId)";
+                                    ,@UserName)";
 
 
                 return connection.QueryFirst<ProductReview>(sql, newProductReview);
