@@ -23,7 +23,6 @@ class BlogCard extends React.Component {
         <p className="Name-title">{blogs.article}</p>
   <div className="delete">
     <button className="btn btn-danger" onClick={this.delete}>Delete</button>
-    {/* <button className="btn btn-danger" onClick={this.AddBlog}>Add</button> */}
     <AddBlog getBlogs={this.props.getBlogs}/>
 
   </div>

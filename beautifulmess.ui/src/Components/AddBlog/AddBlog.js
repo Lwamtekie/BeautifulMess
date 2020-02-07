@@ -9,14 +9,6 @@ import UserData from '../../Helpers/Data/UserData';
 
 import './AddBlog.scss';
 
-
-// const defaultBlog = {
-//   title: 'test',
-//   imageUrl: '',
-//   article: '',
-//   modal: false,
-// };
-
 class AddBlog extends React.Component {
   state = {
     Blog: [],

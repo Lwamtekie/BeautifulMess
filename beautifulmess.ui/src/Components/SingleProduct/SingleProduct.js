@@ -52,9 +52,8 @@ class SingleProduct extends React.Component {
         <img src={product.imageUrl} className="card-img" alt="..." />
         <Link className="btn btn-success" to={ProductsLink}>Return</Link>
         <button className="btn btn-success" onClick={this.addMyProducts}>Add</button>
-
-
-        </div>
+        < getgetProductReview getProductReview={this.props.getProductReview}/>
+      </div>
       </div>
     </div>
    );
