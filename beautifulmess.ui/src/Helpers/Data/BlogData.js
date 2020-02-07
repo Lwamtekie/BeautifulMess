@@ -9,8 +9,13 @@ const getBlogs = () => new Promise((resolve, reject) => {
 });
 
 const deleteBlog = blogId => axios.delete(`${baseUrl}/${blogId}`);
+const addBlog = blog => axios.post(`${baseUrl}`, blog);
+const postNewBlog = newBlog => axios.post(`${baseUrl}`, newBlog);
 
 export default {
   getBlogs,
   deleteBlog,
+  addBlog,
+  postNewBlog,
+
 };

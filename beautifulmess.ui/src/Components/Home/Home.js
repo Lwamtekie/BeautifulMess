@@ -1,8 +1,9 @@
 import React from 'react';
 import BlogData from '../../Helpers/Data/BlogData';
 import BlogCard from '../BlogCard/BlogCard';
+
 import './Home.scss';
-//  import UserData from '../../Helpers/Data/UserData';
+import UserData from '../../Helpers/Data/UserData';
 
 class Home extends React.Component {
   state = {
@@ -17,9 +18,8 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.getBlogs();
-
-    // const userSessionInfo = UserData.getSessionUser(); //How to get userInfo from sessionStorage
-    // this.setState({ userInfo: userSessionInfo });
+    const userSessionInfo = UserData.getSessionUser(); // How to get userInfo from sessionStorage
+    this.setState({ userInfo: userSessionInfo });
   }
 
 deleteBlog = (blogId) => {
@@ -34,11 +34,14 @@ render() {
   const printBlogs = Blogs.map(blogs => <BlogCard key={blogs.id}
         blogs={blogs}
         deleteBlog={this.deleteBlog}
+        getBlogs={this.getBlogs}
       />);
   return (
       <div className="Blog">
       {printBlogs}
-      <div className="Home">
+      <div className="AddBlog">
+
+
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ delete = () => {
 
 render() {
   const { product } = this.props;
+  console.error(product);
   return (
           <div className="ProductCard col-4">
             <div className="card">

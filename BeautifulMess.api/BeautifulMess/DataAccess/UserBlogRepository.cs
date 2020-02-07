@@ -26,21 +26,24 @@ namespace BeautifulMess.DataAccess
 
         }
 
-        public UserBlog GetUserBlog(int UserBlogId)
-        {
+      public IEnumerable<Blog> GetUserBlog(int userId)
+        { 
             using (var db = new SqlConnection(_connectionString))
             {
                 var sql = @"select *
-                            from UserBlog
-                            where Id =@UserBlogId";
+                            from Blog
+                            join UserBlog on Blog.Id = UserBlog.BlogId
+                            where UserBlog.UserId = @userId";
                 var parameters = new
-                {
-                    UserBlogId = UserBlogId
-                };
-                var userblog = db.QueryFirst<UserBlog>(sql, parameters);
+                  {
+                    userId = userId
+
+                  };
+                var userblog = db.Query<Blog>(sql, parameters);
                 return userblog;
             }
         }
+
         public UserBlog AddUserBlog(AddUserBlogCommand newUserBlog)
         {
             using (var connection = new SqlConnection(_connectionString))
@@ -60,7 +63,7 @@ namespace BeautifulMess.DataAccess
                 return connection.QueryFirst<UserBlog>(sql, newUserBlog);
             }
         }
-        public bool DeleteUserBlog(UserBlog userblogToDelete, int id)
+        public bool DeleteUserBlog(int userBlogId)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -68,11 +71,14 @@ namespace BeautifulMess.DataAccess
 
                 var sql = @"delete
                             from [dbo].[UserBlog]
-	                   WHERE [Id] = @Id";
+	                   WHERE [Id] = @userBlogId";
 
-                userblogToDelete.Id = id;
+                var parameters = new
+                {
+                    userBlogId = userBlogId
+                };
 
-                return connection.Execute(sql, userblogToDelete) == 1;
+                return connection.Execute(sql, parameters) == 1;
             }
 
         }
