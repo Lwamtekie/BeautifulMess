@@ -24,12 +24,22 @@ namespace BeautifulMess.Controllers
 
 
         [HttpGet("{productreviewId}")]
-        public ProductReview Get(int productreviewId)
+        public ProductReview GetProductReview(int productreviewId)
         {
             var repo = new ProductReviewRepository();
             var productreview = repo.GetProductReview(productreviewId);
             return productreview;
         }
+        
+        
+        [HttpGet("allReviews/{productId}")]
+        public IEnumerable<ProductReview> GetAllReviewsForProduct(int productId)
+        {
+            var repo = new ProductReviewRepository();
+            var productreview = repo.GetAllReviewsForProduct(productId);
+            return productreview;
+        }
+
 
         // POST: api/productsreview/
         [HttpPost]
