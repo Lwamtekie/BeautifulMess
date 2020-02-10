@@ -86,18 +86,25 @@ AddReview = (e) => {
    const BuildproductReview = this.state.productReview.map(productReview => <ProductReview productReview={productReview}/>);
    const ProductsLink = '/products';
    return (
-    <div className="ProductCard col-4">
-      <div className="card">
-        <div className="card-body">
-        <p className="card-title">{product.name}</p>
-        <p className="card-title">${product.price}</p>
-        <p className="card-title">{product.store}</p>
-        <img src={product.imageUrl} className="card-img" alt="..." />
-        <Link className="btn btn-success" to={ProductsLink}>Return</Link>
-        <button className="btn btn-success" onClick={this.addMyProducts}>Add</button>
+    <div className="SingleProduct">
+      <div className="productContainer">
+      <div className="subContainer">
+      <div className="Single">
+      <div className="singleProduct">
+     <p className="card-title">Name: {product.name}</p>
+        <p className="card-title">$: {product.price}</p>
+        <p className="card-title">Store: {product.store}</p>
+        <img src={product.imageUrl} className="product-img" alt="..." />
+        <div className="buttuns">
+        <Link className="btn btn-danger" to={ProductsLink}>Return</Link>
+        <button className="btn btn-danger" onClick={this.addMyProducts}>Add</button>
+        </div>
+
+
+        {BuildproductReview}
         </div>
       </div>
-        {BuildproductReview}
+        </div>
         <form>
   <div class="form-group">
     <label for="exampleInputName">Name</label>
@@ -117,6 +124,8 @@ AddReview = (e) => {
   <button type="AddReview" class="btn btn-primary">AddReview</button>
 </form>
 </div>
+</div>
+
    );
  }
 }

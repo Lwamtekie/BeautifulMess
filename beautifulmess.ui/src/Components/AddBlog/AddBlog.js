@@ -97,7 +97,7 @@ class AddBlog extends React.Component {
                   value={article}
                   onChange={this.userInputHandler} />
               </FormGroup>
-              <Button type="submit" className="btn btn-success">Add Blog</Button>
+              <Button type="submit" className="btn btn-primary">Add Blog</Button>
             </Form>
           </Modal>
         </div>

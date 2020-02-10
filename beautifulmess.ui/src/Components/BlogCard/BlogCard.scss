@@ -1,3 +1,41 @@
-.card-img-bottom {
-    max-width: 300px;
+
+
+.blogArticle {
+    background-color: #e7e7e7;
+    margin: 0 auto;
+    position: absolute;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.BlogContainer{
+    margin: 25px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    max-width:fit-content;
+      width: 75vw;
+     height: 100vh;
+}
+
+.subConBlog {
+    margin: 15px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    border:1px solid rosybrown;
+    //width: 75vw;
+    //height: 95vh;
+    
+}
+
+img {
+    width: 200px;
+}
+
+
