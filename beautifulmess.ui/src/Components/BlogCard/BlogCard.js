@@ -20,9 +20,9 @@ class BlogCard extends React.Component {
         <div className="Blogcontainer">
         <div className="subConBlog">
         <div className="bolgArticle">
-        <h2 className="Name-title">{blogs.title}</h2>
+        <h2 className="Blog-title">{blogs.title}</h2>
         <img src={blogs.imageUrl} className="blog-img" alt="..." />
-        <p className="Name-title">{blogs.article}</p>
+        <p className="Blog-Article">{blogs.article}</p>
          {/* <div className="delete"> */}
     <button className="btn btn-primary" onClick={this.delete}>Delete</button>
     </div>

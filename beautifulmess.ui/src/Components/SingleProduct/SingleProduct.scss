@@ -35,17 +35,27 @@
 
     .card-img {
         max-width: fit-content;
+        align-items: center;
+
 }
 
 .card-title {
     margin-bottom: .50rem;
+    text-indent: 50px;
+    
 }
 .product-img{
     width: 200px;
+   padding: 2rem;
 }
 
 
 .SingleProduct{
     cursor: pointer;
+}
 
+.btn-danger {
+    color: black;
+    background-color: rosybrown;
+    margin: 2rem;
 }

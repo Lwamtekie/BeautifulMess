@@ -14,34 +14,38 @@ class SingleProduct extends React.Component {
  state = {
    product: {},
    productReview: [],
-   rating: '',
-   comment: '',
-   userName: '',
+   newReview: {
+     rating: '',
+     comment: '',
+   },
  }
 
  userInputHandler = (e) => {
    const { value } = e.target;
+   const newUserReview = { ...this.state.newReview };
    const InputName = e.target.name;
-   this.setState({ [InputName]: value });
+   newUserReview[InputName] = value;
+   this.setState({ newReview: newUserReview });
  }
 
 AddReview = (e) => {
   e.preventDefault();
   const userSessionInfo = UserData.getSessionUser();
   const tempReview = {
-    rating: this.state.rating,
-    comment: this.state.comment,
-    userName: userSessionInfo.userName,
+    rating: this.state.newReview.rating,
+    comment: this.state.newReview.comment,
+    userName: userSessionInfo.name,
+    productId: this.state.product.id,
   };
 
   ProductReviewData.postNewProductReview(tempReview)
     .then(() => {
-      this.setState({
-        rating: '',
-        comment: '',
-        userName: '',
-      });
-      this.props.getProductReview();
+      // const blankReview = {
+      //   rating: '',
+      //   comment: '',
+      // };
+      // this.setState({ newReview: blankReview });
+      this.getProductReview();
     })
     .catch(error => console.error(error));
 }
@@ -49,7 +53,13 @@ AddReview = (e) => {
 
  getProductReview = () => {
    ProductReviewData.getProductsReview(this.state.product.id)
-     .then(res => this.setState({ productReview: res }));
+     .then((res) => {
+       const blankReview = {
+         rating: '',
+         comment: '',
+       };
+       this.setState({ productReview: res, newReview: blankReview });
+     });
  }
 
  addMyProducts = () => {
@@ -81,7 +91,7 @@ AddReview = (e) => {
  }
 
  render() {
-   const { rating, comment, userName } = this.state;
+   const { rating, comment } = this.state.newReview;
    const { product } = this.state;
    const BuildproductReview = this.state.productReview.map(productReview => <ProductReview productReview={productReview}/>);
    const ProductsLink = '/products';
@@ -95,22 +105,15 @@ AddReview = (e) => {
         <p className="card-title">$: {product.price}</p>
         <p className="card-title">Store: {product.store}</p>
         <img src={product.imageUrl} className="product-img" alt="..." />
+       {BuildproductReview}
         <div className="buttuns">
         <Link className="btn btn-danger" to={ProductsLink}>Return</Link>
         <button className="btn btn-danger" onClick={this.addMyProducts}>Add</button>
         </div>
-
-
-        {BuildproductReview}
         </div>
       </div>
         </div>
         <form>
-  <div class="form-group">
-    <label for="exampleInputName">Name</label>
-    <input name="userName" type="name" class="form-control" id="exampleInputName" aria-describedby="NameHelp" value={userName} onChange={this.userInputHandler}/>
-    <small id="nameHelp" class="form-text text-muted">We'll  share your name.</small>
-  </div>
   <div class="form-group">
     <label for="exampleInputComment">Comment</label>
     <input name="comment" type="Comment" class="form-control" id="exampleInputComment"aria-describedby="CommentHelp" value={comment} onChange={this.userInputHandler}/>
@@ -121,7 +124,7 @@ AddReview = (e) => {
     <input name="rating" type="rating" class="form-control" id="exampleInputRating" aria-describedby="RatingHelp" value= {rating} onChange={this.userInputHandler}/>
     <small id="RatingHelp" class="form-text text-muted">We'll  share your rating.</small>
   </div>
-  <button type="AddReview" class="btn btn-primary">AddReview</button>
+  <button type="AddReview" class="btn btn-primary" onClick={this.AddReview}>AddReview</button>
 </form>
 </div>
 </div>
