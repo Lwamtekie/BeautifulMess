@@ -9,14 +9,6 @@ import UserData from '../../Helpers/Data/UserData';
 
 import './AddBlog.scss';
 
-
-// const defaultBlog = {
-//   title: 'test',
-//   imageUrl: '',
-//   article: '',
-//   modal: false,
-// };
-
 class AddBlog extends React.Component {
   state = {
     Blog: [],
@@ -105,7 +97,7 @@ class AddBlog extends React.Component {
                   value={article}
                   onChange={this.userInputHandler} />
               </FormGroup>
-              <Button type="submit" className="btn btn-success">Add Blog</Button>
+              <Button type="submit" className="btn btn-primary">Add Blog</Button>
             </Form>
           </Modal>
         </div>

@@ -34,13 +34,10 @@
 .card-img, .card-img-bottom {
   max-width: fit-content;
 }
-// .card-body {
-//     max-width: fit-content;
-// }
 .card-title {
     clear: both;
-    display: inline-block;
     overflow: hidden;
     font-size: small;
+    font-style: bold;
 
 }

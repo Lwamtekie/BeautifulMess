@@ -26,6 +26,22 @@ namespace BeautifulMess.DataAccess
 
         }
 
+        public IEnumerable<ProductReview> GetAllReviewsForProduct(int productId)
+        {
+            using (var db = new SqlConnection(_connectionString))
+            {
+                var sql = @"select *
+                            from ProductReview
+                            where ProductId = @productId";
+                var parameters = new
+                {
+                    ProductId = productId
+                };
+                var productreview = db.Query<ProductReview>(sql, parameters);
+                return productreview;
+            }
+        }
+
         public ProductReview GetProductReview(int productreviewId)
         {
             using (var db = new SqlConnection(_connectionString))
@@ -52,14 +68,14 @@ namespace BeautifulMess.DataAccess
 	                                ([Comment]
 	                                ,[Rating]
                                     ,[ProductId]
-                                    ,[UserId])
+                                    ,[UserName])
                                     
                                  output inserted.*
                                  VALUES
 	                                (@Comment
                                     ,@Rating
                                     ,@ProductId
-                                    ,@UserId)";
+                                    ,@UserName)";
 
 
                 return connection.QueryFirst<ProductReview>(sql, newProductReview);
