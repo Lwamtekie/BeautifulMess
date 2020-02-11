@@ -36,7 +36,7 @@ class User extends React.Component {
     />);
     return (
           <div className="UserPage">
-              <h2>FavoriteProducts</h2>
+             <h4>FavoriteProducts</h4>
                   {printMyProducts}
               <div className="user">
               </div>

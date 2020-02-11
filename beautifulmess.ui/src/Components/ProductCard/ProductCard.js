@@ -15,9 +15,9 @@ class ProductCard extends React.Component {
 
    return (
         <div className="ProductCard col-4">
-          <div className="card">
-            <div className="card-body">
-            <p className="card-title">{product.name}</p>
+          <div className="product">
+            <div className="product-body">
+            <p className="product-title">{product.name}</p>
             <img src={product.imageUrl} className="card-img" alt="..." />
             <Link className="btn btn-info" to={singleLink}>View</Link>
 

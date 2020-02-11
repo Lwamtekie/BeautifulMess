@@ -1,7 +1,7 @@
-.BlogCard{
-    align-content: center;
+.Blog{
+    max-width: 700px;
+    margin: auto;
 }
-
 .blogArticle {
     background-color: #e7e7e7;
     margin: 0 auto;
@@ -19,9 +19,8 @@
     justify-content: center;
     background-color: white;
     border-radius: 10px;
-    max-width:fit-content;
-      width: 75vw;
-     height: 100vh;
+     // width: 75vw;
+     //height: 100vh;
 }
 
 .subConBlog {
@@ -32,7 +31,7 @@
     border-radius: 10px;
     border:1px solid rosybrown;
     //width: 75vw;
-    //height: 95vh;
+   // height: 95vh;
     
 }
 
@@ -53,8 +52,15 @@
     font-size: 1rem;
     text-align-last: left;
     text-align: initial;
-    font-style: oblique;
     text-indent: 50px;
 }
+.btn-success{
+    color: black;
+    background-color: rosybrown;
+    margin: 1rem;
+    border-style: double;
+    border-color: black;
+}
+
 
 
