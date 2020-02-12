@@ -5,27 +5,29 @@
     width:100%;
 }
 .productContainer{
+    border: 1px solid BLACK;
+    box-shadow: 1px 2px 2px 1px;
+    padding: 2rem;
     margin: 25px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-   // width: 75vw;
-// height: 100vh;
     background-color: white;
     border-radius: 10px;
     max-width:fit-content;
 }
 .subContainer {
+    border: 1px solid BLACK;
+    box-shadow: 1px 2px 2px 1px;
+    padding: 2rem;
     margin: 15px 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    ////width: 75vw;
-    //height: 95vh;
     width:700px;
     border-radius: 10px;
     border:1px solid rosybrown;
-    height: 800px;
+    height: 100%;
 }
 .Single{
     display: flex;
@@ -33,18 +35,22 @@
     align-items: center;
 }
 
-    .card-img {
-        max-width: fit-content;
-        align-items: center;
-
-}
 
 .card-title {
     margin-bottom: .50rem;
     text-indent: 50px;
+    float: left;
     
 }
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+}
 .product-img{
+    float: left;
     width: 200px;
    padding: 2rem;
 }
@@ -54,8 +60,31 @@
     cursor: pointer;
 }
 
-.btn-danger {
+.buttonsingle {
     color: black;
-    background-color: rosybrown;
-    margin: 2rem;
+    background-color: rosybrown !important;
+    border-color: black !important;
+    margin:1rem
 }
+
+.buttondanger{
+    color: black;
+    background-color: rosybrown !important;
+    border-color: black !important;
+    margin-bottom: 4rem;
+}
+
+.ReviewBtn{
+    color: black !important;
+    background-color: grey !important; 
+    border-color: black !important;
+}
+
+.comment-wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    // overflow: scroll;
+    // height: 150px;
+}
+    

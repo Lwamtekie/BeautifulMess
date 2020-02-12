@@ -17,7 +17,7 @@ render() {
               <div className="Product-body">
               <p className="Product-name">{product.name}</p>
               <img src={product.imageUrl} className="card-img" alt="..." />
-              <button className="btn btn-warning" onClick={this.delete}>Delete</button>
+              <button className="btn btn-warning deleteButton" onClick={this.delete}>Delete</button>
               </div>
             </div>
           </div>

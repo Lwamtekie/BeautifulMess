@@ -23,7 +23,7 @@ class BlogCard extends React.Component {
         <h2 className="Blog-title">{blogs.title}</h2>
         <img src={blogs.imageUrl} className="blog-img" alt="..." />
         <p className="Blog-Article">{blogs.article}</p>
-    <button className="btn btn-success" onClick={this.delete}>Delete</button>
+    <button className="btn btn-success button" onClick={this.delete}>Delete</button>
     </div>
   </div>
   </div>

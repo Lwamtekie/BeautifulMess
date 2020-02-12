@@ -2,17 +2,16 @@
     //display:flex;
 //}
 
-.btn-warning {
-    width: 65px;
+.deleteButton {
     color: #212529;
-    background-color: rosybrown;
+    background-color: rosybrown !important;
     border-color: #ff370700;
-    font-size: small;
-    height: 40px;
 }
 
 .btn-info {
-    background-color: rosybrown;
+    background-color: rosybrown !important;
+    border-color: black !important;
+
   }
 
   .card{

@@ -59,7 +59,7 @@ class AddBlog extends React.Component {
     return (
       <div className="newBlogForm">
         <div className="row">
-          <Button color="danger" onClick={this.toggle}>Add</Button>
+          <Button color="primary ButtontoAdd" onClick={this.toggle}>Add Blog</Button>
           <Modal isOpen={modal} toggle={this.toggle}>
             <Form className="col-8 offset-2 mb-3" onSubmit={this.AddBlog}>
               <FormGroup>
@@ -97,7 +97,7 @@ class AddBlog extends React.Component {
                   value={article}
                   onChange={this.userInputHandler} />
               </FormGroup>
-              <Button type="submit" className="btn btn-primary">Add Blog</Button>
+              <Button type="submit" className="btn btn-primary AddButton">Add Blog</Button>
             </Form>
           </Modal>
         </div>

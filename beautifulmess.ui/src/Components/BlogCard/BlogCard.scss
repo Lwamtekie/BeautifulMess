@@ -24,14 +24,15 @@
 }
 
 .subConBlog {
+    border: 1px solid BLACK;
+    background-color: #e7e7e7;
+    padding: 2rem;
     margin: 15px 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     border-radius: 10px;
-    border:1px solid rosybrown;
-    //width: 75vw;
-   // height: 95vh;
+    box-shadow: 1px 2px 2px 1px;
     
 }
 
@@ -49,17 +50,20 @@
 }
 
 .Blog-Article{
+    font-stretch: extra-condensed;
+    padding: 1rem;
     font-size: 1rem;
     text-align-last: left;
     text-align: initial;
     text-indent: 50px;
 }
-.btn-success{
-    color: black;
-    background-color: rosybrown;
+.button{
+    color:#FFFFFF !important;
+    border:0.16em solid rgba(255,255,255,0) !important;
+    background-color:#f14ebd!important;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
     margin: 1rem;
-    border-style: double;
-    border-color: black;
+    box-shadow: 1px 2px 2px 1px;
 }
 
 
