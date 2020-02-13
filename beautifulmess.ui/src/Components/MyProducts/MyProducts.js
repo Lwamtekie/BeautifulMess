@@ -11,12 +11,13 @@ render() {
   const { product } = this.props;
   console.error(product);
   return (
-          <div className="ProductCard col-4">
+
+          <div className="MyProduct col-4">
             <div className="card">
-              <div className="card-body">
-              <p className="card-title">{product.name}</p>
+              <div className="Product-body">
+              <p className="Product-name">{product.name}</p>
               <img src={product.imageUrl} className="card-img" alt="..." />
-              <button className="btn btn-danger" onClick={this.delete}>Delete</button>
+              <button className="btn btn-warning deleteButton" onClick={this.delete}>Delete</button>
               </div>
             </div>
           </div>

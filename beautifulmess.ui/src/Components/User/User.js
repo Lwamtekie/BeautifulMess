@@ -35,11 +35,13 @@ class User extends React.Component {
           deleteUserProduct={this.deleteUserProduct}
     />);
     return (
-          <div className="UserPage">
-              <h2>FavoriteProducts</h2>
+          <div className="UserPag">
+             <h4>FavoriteProducts</h4>
+             <div className="MYProducts">
                   {printMyProducts}
               <div className="user">
               </div>
+          </div>
           </div>
     );
   }

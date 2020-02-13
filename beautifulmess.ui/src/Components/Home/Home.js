@@ -37,7 +37,7 @@ render() {
         getBlogs={this.getBlogs}
       />);
   return (
-      <div className="Blog">
+      <div className="Home">
       {printBlogs}
       <div className="AddBlog">
 

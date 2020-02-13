@@ -2,7 +2,12 @@
 
     text-align-last: left;
     text-align: initial;
-    font-style: oblique;
-    text-indent: 50px;
+    font-family: 'Acme', sans-serif;
+    text-indent: 25px;
+    margin: 8px;
+    }
 
+.card-title {
+    margin-top: 2rem;
+    padding: 0;
 }

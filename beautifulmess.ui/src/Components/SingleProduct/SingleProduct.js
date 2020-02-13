@@ -101,14 +101,17 @@ AddReview = (e) => {
       <div className="subContainer">
       <div className="Single">
       <div className="singleProduct">
+      <img src={product.imageUrl} className="product-img" alt="..." />
      <p className="card-title">Name: {product.name}</p>
         <p className="card-title">$: {product.price}</p>
         <p className="card-title">Store: {product.store}</p>
-        <img src={product.imageUrl} className="product-img" alt="..." />
+        <div className="comment-wrapper">
+        <h1>Review</h1>
        {BuildproductReview}
-        <div className="buttuns">
-        <Link className="btn btn-danger" to={ProductsLink}>Return</Link>
-        <button className="btn btn-danger" onClick={this.addMyProducts}>Add</button>
+        </div>
+        <div id="buttons">
+        <Link className="btn btn-danger buttonsingle" to={ProductsLink}>Return</Link>
+        <button className="btn btn-danger buttondanger" onClick={this.addMyProducts}>Save</button>
         </div>
         </div>
       </div>
@@ -124,7 +127,7 @@ AddReview = (e) => {
     <input name="rating" type="rating" class="form-control" id="exampleInputRating" aria-describedby="RatingHelp" value= {rating} onChange={this.userInputHandler}/>
     <small id="RatingHelp" class="form-text text-muted">We'll  share your rating.</small>
   </div>
-  <button type="AddReview" class="btn btn-primary" onClick={this.AddReview}>AddReview</button>
+  <button type="AddReview" class="btn btn-primary ReviewBtn" onClick={this.AddReview}>AddReview</button>
 </form>
 </div>
 </div>

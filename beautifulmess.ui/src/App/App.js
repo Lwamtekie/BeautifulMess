@@ -20,6 +20,7 @@ class App extends React.Component {
     authenticated: false,
   }
 
+
   setAuthenticated = () => {
     this.setState({ authenticated: true });
   }
