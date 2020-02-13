@@ -9,6 +9,7 @@ import Register from '../Components/Register/Register';
 import Login from '../Components/Login/Login';
 import SingleProduct from '../Components/SingleProduct/SingleProduct';
 import User from '../Components/User/User';
+import LogOut from '../Components/LogOut/LogOut';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -37,6 +38,7 @@ class App extends React.Component {
         <Route exact path="/Login" component={props => <Login {...props} setAuthenticated={this.setAuthenticated}/>} />
         <Route exact path="/single/:id" component={SingleProduct}/>
         <Route exact component={User} path="/User" />
+        <Route exact component={LogOut} path="/LogOut" />
         </Switch>
         </BrowserRouter>
       </div>

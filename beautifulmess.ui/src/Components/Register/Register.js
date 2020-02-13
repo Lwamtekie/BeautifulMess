@@ -56,7 +56,7 @@ render() {
       <form className="form-horizontal col-sm-6 col-sm-offset-3">
       <div className="form-group">
               <label htmlFor="inputEmail" className="col-sm-4 control-label">
-                name:
+                Name:
               </label>
               <div className="col-sm-8">
                 <input

@@ -10,7 +10,7 @@
   margin: 1rem;
   border-style: double;
   border:0.16em solid rgba(255,255,255,0);
-  border-radius: 50% !important;
+  border-radius: 25% !important;
   
 }
 
@@ -21,10 +21,11 @@
   margin: 1rem;
   border-style: double;
   border:0.16em solid rgba(255,255,255,0);
-  border-radius: 50% !important;
+  border-radius: 25% !important;
   }
 
   .card{
+    box-shadow: 4px 6px 6px 6px;
     background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190620/ourmid/pngtree-fashion-fall-foliage-new-products-background-image_163281.jpg");
     background-position: center center;
     background-size: cover;
