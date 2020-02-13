@@ -1,17 +1,27 @@
-////.UserPage{
-    //display:flex;
-//}
+.MyProducts{
+  font-family: 'Acme', sans-serif;
+  padding: 2rem;
+}
 
 .deleteButton {
-    color: #212529;
-    background-color: rosybrown !important;
-    border-color: #ff370700;
+  background-color:#f14ebd!important;
+  color:#FFFFFF !important;
+  border:0.16em solid rgba(255,255,255,0) !important;
+  margin: 1rem;
+  border-style: double;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius: 50% !important;
+  
 }
 
 .btn-info {
-    background-color: rosybrown !important;
-    border-color: black !important;
-
+  background-color:#4e9af1!important;
+  color:#FFFFFF !important;
+  border:0.16em solid rgba(255,255,255,0) !important;
+  margin: 1rem;
+  border-style: double;
+  border:0.16em solid rgba(255,255,255,0);
+  border-radius: 50% !important;
   }
 
   .card{
@@ -20,5 +30,12 @@
     background-size: cover;
     background-attachment: fixed;
     padding: .25rem;
+    font-family: 'Acme', sans-serif;
+    text-align-last: left;
+    font-size: smaller
+  }
+
+  .card-img{
+    width: 100%;
   }
   

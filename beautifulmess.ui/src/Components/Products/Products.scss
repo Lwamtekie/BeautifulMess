@@ -1,11 +1,21 @@
 .product{
     align-content: center;
+    border: solid;
+    border: double;
+    border: solid;
+    justify-content: space-evenly;
+    border-radius: .25rem;
+    word-wrap: break-word;
+    font-family: 'Acme', sans-serif;
+    font-size: smaller;
 }
 
 
 .Product-main{
     display: flex;  
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem;
 }
 
 .row {
@@ -32,7 +42,7 @@
     padding: 2rem;
 }
 .product-img, .card-img-bottom {
-  max-width: fit-content;
+    width: 100%;
 }
 .product-name {
     font-size: .4rem;
@@ -43,4 +53,6 @@
     margin-top: 0;
     margin-bottom: 1rem;
     padding: .5rem;
+    font-family: 'Acme', sans-serif;
+    font-size: smaller;
 }

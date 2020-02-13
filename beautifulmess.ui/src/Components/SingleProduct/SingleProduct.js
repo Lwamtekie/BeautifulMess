@@ -111,7 +111,7 @@ AddReview = (e) => {
         </div>
         <div id="buttons">
         <Link className="btn btn-danger buttonsingle" to={ProductsLink}>Return</Link>
-        <button className="btn btn-danger buttondanger" onClick={this.addMyProducts}>Add</button>
+        <button className="btn btn-danger buttondanger" onClick={this.addMyProducts}>Save</button>
         </div>
         </div>
       </div>

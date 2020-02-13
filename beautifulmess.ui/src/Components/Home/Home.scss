@@ -1,6 +1,16 @@
 .Home{
+    height: 100vh-1440*4012;
+  background-image: url("https://www.motocms.com/blog/wp-content/uploads/2017/11/pexels-photo-271795.jpeg");
+  background-position: center center ; 
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: scroll;
+  flex: 1 4 auto;
+  position: relative;
+  font-family: 'Acme', sans-serif; 
+
     cursor: pointer;
-    background-color: #e7e7e7;
+    
 }
 
 
