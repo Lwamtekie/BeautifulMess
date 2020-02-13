@@ -1,0 +1,24 @@
+.LogOut {
+    // background-image: url(./Image/Beautiful.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction:column;
+    height: 100vh;
+    //justify-content: center;
+    align-items: center;
+}
+// .card-wrapper{
+//     display:flex;
+//     flex-wrap:wrap;
+//     background-color: rgba(0, 0, 0, .6) !important;
+//     overflow:scroll;
+//     justify-content: center;
+//     .quoteCard{
+//         background-color:rgba(0, 0, 0, .6) !important;
+//     }
+//     &::-webkit-scrollbar {
+//       display: none;
+//     }
+// }

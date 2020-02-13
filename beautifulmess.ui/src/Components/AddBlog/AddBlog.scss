@@ -14,6 +14,12 @@
     margin: 1rem;
     border-style: double;
     border:0.16em solid rgba(255,255,255,0);
-    border-radius: 50% !important;
+    border-radius: 25% !important;
   
 }
+
+@media only screen and (min-width: 768px) {
+    .Home {
+      flex-direction: row
+    }
+  }

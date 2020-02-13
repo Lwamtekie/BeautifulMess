@@ -33,7 +33,7 @@ const MyNavbar = (props) => {
             <NavLink href="/Register">Register</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/Products">LogOut</NavLink>
+            <NavLink href="/LogOut">LogOut</NavLink>
           </NavItem>
         </Nav>
       </Collapse>
