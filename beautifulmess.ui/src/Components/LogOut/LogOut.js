@@ -7,7 +7,7 @@ class LogOut extends React.Component {
     return (
 
         <div className="LOgOut">
-            <div className="jumbotron text-center col-mid-6">
+         <div className="jumbotron text-center col-mid-6">
               <img src={Beautiful} className="logout-img" alt="..."/>
               </div>
         </div>
