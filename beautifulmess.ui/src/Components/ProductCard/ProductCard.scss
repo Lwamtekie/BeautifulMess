@@ -1,6 +1,6 @@
 .buttonProduct {
-  background-color:rgb(12, 218, 115)!important;
-    color:#FFFFFF !important;
+       background-color:rgb(12, 218, 115)!important;
+      color:#FFFFFF !important;
     border:0.16em solid rgba(255,255,255,0) !important;
     margin: 1rem;
     border-style: double;
@@ -8,8 +8,8 @@
     border-radius: 25% !important;
 }
 
-@media only screen and (min-width: 768px) {
-  .Home {
-    flex-direction: row
-  }
-}
+// @media only screen and (min-width: 768px) {
+//   .Home {
+//     flex-direction: row
+//   }
+// }
