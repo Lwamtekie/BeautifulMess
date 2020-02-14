@@ -58,3 +58,10 @@
     font-family: 'Acme', sans-serif;
     font-size: smaller;
 }
+
+
+@media only screen and (min-width: 768px) {
+    .Products{
+      flex-direction: row
+    }
+  }

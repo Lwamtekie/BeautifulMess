@@ -96,11 +96,6 @@
     
 }
 
-@media only screen and (min-width: 768px) {
-    .Home {
-      flex-direction: row
-    }
-  }
 
 .ReviewBtn{
     border:0.16em solid rgba(255,255,255,0) !important;
@@ -125,4 +120,9 @@
      overflow: scroll;
     height: 150px;
 }
-    
+
+@media only screen and (min-width: 768px) {
+    .SingleProduct{
+      flex-direction: row
+    }
+  }
